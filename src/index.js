@@ -1,39 +1,43 @@
 import './style.css';
+import { initializeLandingPage } from './landingPage';
+import { initializeContactPage } from './contactPage';
+initializeLandingPage();
+constructNav();
 
-const initializePage = (function() {
-    const body = document.getElementById('content');
-    // create banner, footer, and services container divs
-    const banner = document.createElement('div');
-    banner.id = 'banner';
-    banner.textContent = 'Currying Favor';
-    const servicesContainer = document.createElement('div');
-    servicesContainer.id = 'servicesContainer';
-    const footer = document.createElement('div');
-    footer.id = 'footer';
-    footer.textContent = `Delicious catering combinations, 
-        perfect for any occasion, delivered right to your car.\r\n
-        (555)555-5555`;
-    body.appendChild(banner);
-    body.appendChild(servicesContainer);
-    body.appendChild(footer);
-    // create services container elements
-    const menuPicDiv = document.createElement('div');
-    const leftServiceMargin = document.createElement('div');
-    leftServiceMargin.id = 'leftServiceMargin';
-    leftServiceMargin.innerText = `Indian cuisine dates back over 5000 
-        years. Each region has its own traditions, religions and culture 
-        that influence its food.Typically curries consisting of meat, spices 
-        and vegetables, such as chickpeas, potatoes, spinach and beans, 
-        are served as a main dish.`;
-    leftServiceMargin.style.flex = '1 1 auto';
-    const rightServiceMargin = document.createElement('div');
-    rightServiceMargin.id = 'rightServiceMargin';
-    rightServiceMargin.innerText = `A celebration of regional Indian flavors 
-        brought to life using fresh local produce, our progressive menu gives 
-        a nod to the past while looking straight into the future.`;
-    rightServiceMargin.style.flex = '1 1 auto';
-    menuPicDiv.id = 'menuPicDiv';
-    servicesContainer.appendChild(leftServiceMargin);
-    servicesContainer.appendChild(menuPicDiv);
-    servicesContainer.appendChild(rightServiceMargin);   
-})();
+const body = document.getElementById('content');
+function loadHomePage() {
+    body.innerHTML = '';
+    initializeLandingPage();
+    constructNav();
+}
+function loadMenuPage() {
+    body.innerHTML = '';
+    initializeContactPage();
+    constructNav();
+}
+
+function constructNav() {
+    const banner = document.getElementById('banner');
+    // add home, menu, and contact tabs to banner
+    const home = document.createElement('span');
+    home.id = 'home';
+    home.innerText = 'Home';
+    const menu = document.createElement('span');
+    menu.id = 'menu';
+    menu.innerText = 'Menu';
+    const contact = document.createElement('span');
+    contact.id = 'contact';
+    contact.innerText = 'Contact';
+    // prepend nav buttons container to banner
+    const navContainer = document.createElement('div');
+    navContainer.append(home, menu, contact);
+    navContainer.id = 'navContainer';
+    banner.prepend(navContainer);
+    
+    home.addEventListener('click', loadHomePage);
+    contact.addEventListener('click', loadMenuPage);
+    // contact.addEventListener('click', loadContactPage);
+    
+}
+
+
