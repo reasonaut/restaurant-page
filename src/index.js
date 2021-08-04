@@ -1,18 +1,21 @@
 import './style.css';
-// import MenuPicture from './menuPicture.jpg';
 
 const initializePage = (function() {
-    console.log("I've been immediately invoked again!");
-
+    const body = document.getElementById('content');
     const banner = document.getElementById('banner');
     const servicesContainer = document.getElementById('servicesContainer');
+    // create services container elements
     const menuPicDiv = document.createElement('div');
+    const leftServiceMargin = document.createElement('div');
+    leftServiceMargin.id = 'leftServiceMargin';
+    leftServiceMargin.innerText = 'test';
+    leftServiceMargin.style.flex = '1 1 auto';
+    const rightServiceMargin = document.createElement('div');
+    rightServiceMargin.id = 'rightServiceMargin';
+    rightServiceMargin.innerText = 'test2';
+    rightServiceMargin.style.flex = '1 1 auto';
     menuPicDiv.id = 'menuPicDiv';
+    servicesContainer.appendChild(leftServiceMargin);
     servicesContainer.appendChild(menuPicDiv);
-    
-    // const menuPic = new Image();
-    // menuPic.src = MenuPicture;
-    
-    // menuPicDiv.style.background = menuPicture;
-    
+    servicesContainer.appendChild(rightServiceMargin);   
 })();

@@ -4,18 +4,42 @@ html, body {
     height: 100%;
     width: 100%;
 }
+#content {
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+    align-items:stretch;
+}
 #banner {
     height: 100px;
-    border: solid black 2px;
+    text-align: center;
+    background-color: red;
+    flex: 1 1 auto;
+}
+#servicesContainer {
+    flex: 0 1 auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: tan;
+}
+#leftServiceMargin {
     text-align: center;
 }
-#serviceContainer {
-    border: solid black 2px;
-    display: flex;
-    justify-content: space-around;
-}
 #menuPicDiv {
-    background: url('./menuPicture.jpg');
-    height: 100px;
-    width: 100px;
+    background-image: url('./menuPicture.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 533px;
+    width: 533px;
+    flex: 2 1 auto;
+}
+#rightServiceMargin {
+    text-align: center;
+}
+#footer {
+    flex: 1 1 auto;
+    background-color: red;
+    text-align: center;
 }
