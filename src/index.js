@@ -1,6 +1,7 @@
 import './style.css';
 import { initializeLandingPage } from './landingPage';
 import { initializeContactPage } from './contactPage';
+import { initializeMenuPage } from './menuPage';
 initializeLandingPage();
 constructNav();
 
@@ -10,9 +11,14 @@ function loadHomePage() {
     initializeLandingPage();
     constructNav();
 }
-function loadMenuPage() {
+function loadContactPage() {
     body.innerHTML = '';
     initializeContactPage();
+    constructNav();
+}
+function loadMenuPage() {
+    body.innerHTML = '';
+    initializeMenuPage();
     constructNav();
 }
 
@@ -35,8 +41,8 @@ function constructNav() {
     banner.prepend(navContainer);
     
     home.addEventListener('click', loadHomePage);
-    contact.addEventListener('click', loadMenuPage);
-    // contact.addEventListener('click', loadContactPage);
+    contact.addEventListener('click', loadContactPage);
+    menu.addEventListener('click', loadMenuPage);
     
 }
 
