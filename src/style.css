@@ -65,6 +65,9 @@ html, body {
     padding-top: 30px;
     padding-bottom: 30px;
 }
+.selectedNav {
+    background-color: brown;
+}
 #home {
 
 }

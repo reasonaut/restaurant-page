@@ -10,6 +10,7 @@ export function initializeContactPage() {
 
     const contactContent = document.createElement('div');
     const header = document.createElement('p');
+    header.style.textAlign = 'center';
     header.innerText = 'Contact Us';
     contactContent.appendChild(header);
     body.appendChild(contactContent);

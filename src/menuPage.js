@@ -10,6 +10,7 @@ export function initializeMenuPage() {
 
     const menuContent = document.createElement('div');
     const header = document.createElement('p');
+    header.style.textAlign = 'center';
     header.innerText = 'Menu';
     menuContent.appendChild(header);
     body.appendChild(menuContent);

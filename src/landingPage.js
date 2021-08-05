@@ -12,7 +12,7 @@ export function initializeLandingPage() {
     footer.id = 'footer';
     footer.textContent = `Delicious catering combinations, 
         perfect for any occasion, delivered right to your car.\r\n
-        (555)555-5555`;
+        (555)555-5555\r\nCurryingFavorOrders@gmail.com`;
     body.appendChild(banner);
     body.appendChild(servicesContainer);
     body.appendChild(footer);
@@ -35,5 +35,5 @@ export function initializeLandingPage() {
     menuPicDiv.id = 'menuPicDiv';
     servicesContainer.appendChild(leftServiceMargin);
     servicesContainer.appendChild(menuPicDiv);
-    servicesContainer.appendChild(rightServiceMargin);   
+    servicesContainer.appendChild(rightServiceMargin);
 }

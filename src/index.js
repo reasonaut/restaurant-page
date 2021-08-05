@@ -4,22 +4,27 @@ import { initializeContactPage } from './contactPage';
 import { initializeMenuPage } from './menuPage';
 initializeLandingPage();
 constructNav();
+// mark landing page as selected page
+document.getElementById('home').classList.add('selectedNav');
 
 const body = document.getElementById('content');
 function loadHomePage() {
     body.innerHTML = '';
     initializeLandingPage();
     constructNav();
+    document.getElementById('home').classList.add('selectedNav');
 }
 function loadContactPage() {
     body.innerHTML = '';
     initializeContactPage();
     constructNav();
+    document.getElementById('contact').classList.add('selectedNav');
 }
 function loadMenuPage() {
     body.innerHTML = '';
     initializeMenuPage();
     constructNav();
+    document.getElementById('menu').classList.add('selectedNav');
 }
 
 function constructNav() {
